@@ -1,0 +1,35 @@
+@mixin mw-400 {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+@mixin mw-575{
+    @media (max-width: 575px) {
+        @content;
+    }
+}
+@mixin mw-767 {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+@mixin mw-991 {
+    @media (max-width: 991px) {
+        @content;
+    }
+}
+@mixin mw-1200 {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin mw-1400 {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin size($size) {
+    width: $size;
+    height: $size;
+}
