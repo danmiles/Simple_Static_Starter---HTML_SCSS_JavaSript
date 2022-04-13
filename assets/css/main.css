@@ -10,6 +10,16 @@ body {
     margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -29,10 +39,36 @@ a {
     transition: all 0.3s ease;
     color: #e73515;
     text-decoration: none;
+    cursor: pointer;
 }
 a:hover {
     color: #098809;
     text-decoration: none;
+}
+
+button {
+    background-color: #e73515;
+    /* Green */
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #098809;
+    color: #153ef6;
+}
+
+section {
+    padding: 100px 0;
 }
 
 .fixed-top {
@@ -41,10 +77,6 @@ a:hover {
     right: 0;
     left: 0;
     z-index: 1030;
-}
-
-section {
-    padding: 100px 0;
 }
 
 @media (max-width: 991px) {
@@ -57,7 +89,19 @@ section {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     z-index: 997;
-    padding: 15px 0;
+    padding: 8px 0;
+    background-color: #d7d7d7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+@media (max-width: 991px) {
+    .header {
+        min-height: 50px;
+    }
 }
 .header .logo {
     line-height: 0;
@@ -71,19 +115,19 @@ section {
     font-weight: 700;
     letter-spacing: 1px;
     color: #098809;
-    margin-top: 3px;
+}
+@media (max-width: 400px) {
+    .header .logo span {
+        display: none;
+    }
 }
 
 .header-scrolled {
     background-color: #f3aa22;
     -webkit-box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
             box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-    padding: 8px 0;
-}
-@media (max-width: 991px) {
-    .header-scrolled {
-        padding: 20px 0;
-    }
+    padding: 5px 0;
+    min-height: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -139,7 +183,7 @@ section {
 }
 .navbar a i,
 .navbar a:focus i {
-    font-size: 20px;
+    font-size: 15px;
     line-height: 0;
     margin-left: 2px;
 }

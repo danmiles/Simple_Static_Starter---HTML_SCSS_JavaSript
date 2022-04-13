@@ -93,8 +93,8 @@
      */
     on("click", ".mobile-nav-toggle", function (e) {
         select("#navbar").classList.toggle("navbar-mobile");
-        this.classList.toggle("bx-list-plus");
-        this.classList.toggle("bx-list-minus");
+        this.classList.toggle("fa-plus");
+        this.classList.toggle("fa-minus");
     });
 
     /**
@@ -126,8 +126,8 @@
                 if (navbar.classList.contains("navbar-mobile")) {
                     navbar.classList.remove("navbar-mobile");
                     let navbarToggle = select(".mobile-nav-toggle");
-                    navbarToggle.classList.toggle("bx-list-plus");
-                    navbarToggle.classList.toggle("bx-list-minus");
+                    navbarToggle.classList.toggle("fa-plus");
+                    navbarToggle.classList.toggle("fa-minus");
                 }
                 scrollto(this.hash);
             }

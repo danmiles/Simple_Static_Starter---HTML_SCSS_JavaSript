@@ -17,6 +17,16 @@ body {
     margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -36,10 +46,37 @@ a {
     transition: all 0.3s ease;
     color: $link-color;
     text-decoration: none;
+    cursor: pointer;
+
     &:hover {
         color: $link-color__hover;
         text-decoration: none;
     }
+}
+
+button {
+    background-color: $link-color;
+    /* Green */
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $link-color__hover;
+        color: $accent;
+    }
+}
+
+section {
+    padding: 100px 0;
 }
 
 .fixed-top {
@@ -50,9 +87,6 @@ a {
     z-index: 1030;
 }
 
-section {
-    padding: 100px 0;
-}
 // ============= Global setup end =============
 
 // =============  Disable aos animation delay on mobile devices start =============
@@ -70,20 +104,30 @@ section {
 .header {
     transition: all 0.5s;
     z-index: 997;
-    padding: 15px 0;
+    padding: 8px 0;
+    background-color: $header__backgrond-color;
+    display: flex;
+    align-items: center;
+    @include mw-991 {
+        min-height: 50px;
+    }
 
     .logo {
         line-height: 0;
+
         img {
             max-height: 40px;
             margin-right: 6px;
         }
+
         span {
             font-size: 25px;
             font-weight: 700;
             letter-spacing: 1px;
-            color: $logo__text-color;
-            margin-top: 3px;
+            color: $logo__text-color;            
+            @include mw-400 {
+                display: none;
+            }
         }
     }
 }
@@ -91,10 +135,9 @@ section {
 .header-scrolled {
     background-color: $header-scrolled__background;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-    padding: 8px 0;
-    @include mw-991 {
-        padding: 20px 0;
-    }
+    padding: 5px 0;
+    min-height: 40px;
+  
 }
 
 /*--------------------------------------------------------------
@@ -105,6 +148,7 @@ section {
 */
 .navbar {
     padding: 0;
+
     ul {
         margin: 0;
         padding: 0;
@@ -112,9 +156,11 @@ section {
         list-style: none;
         align-items: center;
     }
+
     li {
         position: relative;
     }
+
     a,
     a:focus {
         display: flex;
@@ -127,22 +173,26 @@ section {
         color: $navbar__text-color;
         white-space: nowrap;
         transition: 0.3s;
+
         @include mw-991 {
             justify-content: start;
         }
     }
+
     a i,
     a:focus i {
-        font-size: 20px;
+        font-size: 15px;
         line-height: 0;
         margin-left: 2px;
     }
+
     a:hover,
     .active,
     .active:focus,
-    li:hover > a {
+    li:hover>a {
         color: $navbar-active-focus;
     }
+
     .getstarted,
     .getstarted:focus {
         background: $navbar__link-color;
@@ -151,16 +201,19 @@ section {
         border-radius: 4px;
         color: #fff;
     }
+
     .getstarted:hover,
     .getstarted:focus:hover {
         color: #fff;
         background: $navbar__link-color-hover;
     }
-    .dropdown:hover > ul {
+
+    .dropdown:hover>ul {
         opacity: 1;
         top: 100%;
         visibility: visible;
     }
+
     .dropdown ul {
         display: block;
         position: absolute;
@@ -175,28 +228,35 @@ section {
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
         transition: 0.3s;
         border-radius: 4px;
+
         li {
             min-width: 200px;
+
             &:hover {
                 color: $navbar__link-color-hover;
             }
         }
+
         a {
             padding: 10px 20px;
             font-size: 15px;
             text-transform: none;
             font-weight: 600;
+
             i {
                 font-size: 20px;
             }
+
             &:hover {
                 color: $navbar__link-color-hover;
             }
         }
+
         .active:hover {
             color: $navbar__link-color-hover;
         }
     }
+
     .dropdown {
         .dropdown ul {
             top: 0;
@@ -206,17 +266,19 @@ section {
     }
 }
 
-.dropdown .dropdown:hover > ul {
+.dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
     visibility: visible;
 }
+
 @include mw-1400 {
     .navbar .dropdown .dropdown ul {
         left: -90%;
     }
-    .navbar .dropdown .dropdown:hover > ul {
+
+    .navbar .dropdown .dropdown:hover>ul {
         left: -100%;
     }
 }
@@ -231,6 +293,7 @@ section {
     display: none;
     line-height: 0;
     transition: 0.5s;
+
     .bi-x {
         color: #fff;
     }
@@ -255,12 +318,14 @@ section {
     bottom: 0;
     background-color: $navbar-mobile__background;
     transition: 0.3s;
+
     .mobile-nav-toggle {
         font-size: 40px;
         position: absolute;
         top: 25px;
         right: 15px;
     }
+
     ul {
         display: block;
         position: absolute;
@@ -274,26 +339,31 @@ section {
         overflow-y: auto;
         transition: 0.3s;
     }
+
     a,
     a:focus {
         padding: 10px 20px;
         font-size: 15px;
-        color: $navbar-mobile__link-color;        
+        color: $navbar-mobile__link-color;
     }
+
     a:hover,
     .active,
-    li:hover > a {
+    li:hover>a {
         color: $navbar-mobile__link-color-hover;
     }
+
     .getstarted,
-    .getstarted:focus {        
+    .getstarted:focus {
         margin: 15px;
+
         @include mw-991 {
             display: block;
             text-align: center;
             margin: 15px 50px;
-        }        
+        }
     }
+
     .dropdown {
         ul {
             position: static;
@@ -306,26 +376,29 @@ section {
             background: $navbar-mobile__text;
             box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
         }
+
         ul li {
             min-width: 200px;
         }
+
         ul a {
             padding: 10px 20px;
         }
+
         ul a i {
             font-size: 20px;
         }
+
         ul a:hover,
         ul .active:hover,
-        ul li:hover > a {
+        ul li:hover>a {
             color: $navbar-mobile__link-color-hover;
         }
-        > .dropdown-active {
+
+        >.dropdown-active {
             display: block;
         }
     }
 }
-
-
 
 // ============= Header end =============
