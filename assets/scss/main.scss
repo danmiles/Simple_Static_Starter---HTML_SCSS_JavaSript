@@ -153,8 +153,12 @@ section {
         margin: 0;
         padding: 0;
         display: flex;
+        gap: 40px;
         list-style: none;
         align-items: center;
+        @include mw-1200 {
+            gap: 30px;
+        }
     }
 
     li {
@@ -165,8 +169,7 @@ section {
     a:focus {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 10px 0 10px 30px;
+        justify-content: space-between;        
         font-family: "Roboto", sans-serif;
         font-size: 16px;
         font-weight: 700;
@@ -386,7 +389,7 @@ section {
         }
 
         ul a i {
-            font-size: 20px;
+            font-size: 15px;
         }
 
         ul a:hover,

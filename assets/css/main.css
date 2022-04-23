@@ -145,10 +145,16 @@ section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    gap: 40px;
     list-style: none;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+}
+@media (max-width: 1200px) {
+    .navbar ul {
+        gap: 30px;
+    }
 }
 .navbar li {
     position: relative;
@@ -164,7 +170,6 @@ section {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 10px 0 10px 30px;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -369,7 +374,7 @@ section {
     padding: 10px 20px;
 }
 .navbar-mobile .dropdown ul a i {
-    font-size: 20px;
+    font-size: 15px;
 }
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
