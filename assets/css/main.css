@@ -1,3 +1,7 @@
+.container {
+    max-width: 1440px;
+}
+
 body {
     font-size: 16px;
     line-height: 1.5;
@@ -37,22 +41,22 @@ ol li {
 a {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    color: #e73515;
+    color: #0baa0b;
     text-decoration: none;
     cursor: pointer;
 }
 a:hover {
-    color: #098809;
+    color: #358b03;
     text-decoration: none;
 }
 
-button {
-    background-color: #e73515;
+.button {
+    background-color: #0baa0b;
     /* Green */
     border: none;
     border-radius: 15px;
-    color: white;
-    padding: 15px 32px;
+    color: white !important;
+    padding: 8px 17px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -62,8 +66,8 @@ button {
     transition: all 0.3s ease;
     cursor: pointer;
 }
-button:hover {
-    background-color: #098809;
+.button:hover, .button:focus {
+    background-color: #358b03;
     color: #153ef6;
 }
 
@@ -197,19 +201,6 @@ section {
 .navbar .active:focus,
 .navbar li:hover > a {
     color: #127512;
-}
-.navbar .getstarted,
-.navbar .getstarted:focus {
-    background: #0baa0b;
-    padding: 8px 20px;
-    margin-left: 30px;
-    border-radius: 4px;
-    color: #fff;
-}
-.navbar .getstarted:hover,
-.navbar .getstarted:focus:hover {
-    color: #fff;
-    background: #358b03;
 }
 .navbar .dropdown:hover > ul {
     opacity: 1;

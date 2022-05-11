@@ -54,13 +54,13 @@ a {
     }
 }
 
-button {
+.button {
     background-color: $link-color;
     /* Green */
     border: none;
     border-radius: 15px;
-    color: white;
-    padding: 15px 32px;
+    color: white !important;
+    padding: 8px 17px ;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -69,7 +69,7 @@ button {
     transition: all 0.3s ease;
     cursor: pointer;
 
-    &:hover {
+    &:hover, &:focus {
         background-color: $link-color__hover;
         color: $accent;
     }
@@ -105,7 +105,7 @@ section {
     transition: all 0.5s;
     z-index: 997;
     padding: 8px 0;
-    background-color: $header__backgrond-color;
+    background-color: #d7d7d7;
     display: flex;
     align-items: center;
     @include mw-991 {
@@ -124,7 +124,7 @@ section {
             font-size: 25px;
             font-weight: 700;
             letter-spacing: 1px;
-            color: $logo__text-color;            
+            color: #098809;            
             @include mw-400 {
                 display: none;
             }
@@ -133,7 +133,7 @@ section {
 }
 
 .header-scrolled {
-    background-color: $header-scrolled__background;
+    background-color: #f3aa22;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
     padding: 5px 0;
     min-height: 40px;
@@ -173,7 +173,7 @@ section {
         font-family: "Roboto", sans-serif;
         font-size: 16px;
         font-weight: 700;
-        color: $navbar__text-color;
+        color: #012970;
         white-space: nowrap;
         transition: 0.3s;
 
@@ -193,22 +193,7 @@ section {
     .active,
     .active:focus,
     li:hover>a {
-        color: $navbar-active-focus;
-    }
-
-    .getstarted,
-    .getstarted:focus {
-        background: $navbar__link-color;
-        padding: 8px 20px;
-        margin-left: 30px;
-        border-radius: 4px;
-        color: #fff;
-    }
-
-    .getstarted:hover,
-    .getstarted:focus:hover {
-        color: #fff;
-        background: $navbar__link-color-hover;
+        color: #127512;
     }
 
     .dropdown:hover>ul {
@@ -236,7 +221,7 @@ section {
             min-width: 200px;
 
             &:hover {
-                color: $navbar__link-color-hover;
+                color: $link-color__hover;
             }
         }
 
@@ -251,12 +236,12 @@ section {
             }
 
             &:hover {
-                color: $navbar__link-color-hover;
+                color: $link-color__hover;
             }
         }
 
         .active:hover {
-            color: $navbar__link-color-hover;
+            color: $link-color__hover;
         }
     }
 
@@ -290,7 +275,7 @@ section {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-    color: $mobile-nav__toggle;
+    color: #127512;
     font-size: 40px;
     cursor: pointer;
     display: none;
@@ -319,7 +304,7 @@ section {
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: $navbar-mobile__background;
+    background-color: #f3aa22;
     transition: 0.3s;
 
     .mobile-nav-toggle {
@@ -338,7 +323,7 @@ section {
         left: 15px;
         padding: 10px 0;
         border-radius: 10px;
-        background-color: $navbar-mobile__backgrond;
+        background-color: #eedddd;
         overflow-y: auto;
         transition: 0.3s;
     }
@@ -347,13 +332,13 @@ section {
     a:focus {
         padding: 10px 20px;
         font-size: 15px;
-        color: $navbar-mobile__link-color;
+        color: #012970;
     }
 
     a:hover,
     .active,
     li:hover>a {
-        color: $navbar-mobile__link-color-hover;
+        color: #358b03;
     }
 
     .getstarted,
@@ -376,7 +361,7 @@ section {
             z-index: 99;
             opacity: 1;
             visibility: visible;
-            background: $navbar-mobile__text;
+            background: #ffffff;
             box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
         }
 
@@ -395,7 +380,7 @@ section {
         ul a:hover,
         ul .active:hover,
         ul li:hover>a {
-            color: $navbar-mobile__link-color-hover;
+            color: #358b03;
         }
 
         >.dropdown-active {
