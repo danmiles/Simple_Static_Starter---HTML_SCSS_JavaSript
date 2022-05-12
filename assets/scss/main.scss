@@ -54,24 +54,29 @@ a {
     }
 }
 
-.button {
-    background-color: $link-color;
-    /* Green */
+button {
     border: none;
-    border-radius: 15px;
-    color: white !important;
-    padding: 8px 17px ;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    cursor: pointer;
-
-    &:hover, &:focus {
-        background-color: $link-color__hover;
-        color: $accent;
+    padding: 0;
+    margin: 0;    
+    border-radius: 10px;    
+    .button { 
+        display: inline-block;       
+        background-color: $link-color;        
+        border: none; 
+        border-radius: 10px;        
+        color: white !important;
+        padding: 8px 17px ;
+        text-align: center;
+        text-decoration: none;       
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    
+        &:hover, &:focus {
+            background-color: $link-color__hover;
+            color: $accent;
+        }
     }
 }
 
@@ -148,6 +153,9 @@ section {
 */
 .navbar {
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     ul {
         margin: 0;
@@ -163,7 +171,7 @@ section {
 
     li {
         position: relative;
-    }
+    } 
 
     a,
     a:focus {
@@ -295,9 +303,14 @@ section {
     .navbar ul {
         display: none;
     }
+
 }
 
 .navbar-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     position: fixed;
     overflow: hidden;
     top: 0;
@@ -325,9 +338,11 @@ section {
         border-radius: 10px;
         background-color: #eedddd;
         overflow-y: auto;
-        transition: 0.3s;
+        transition: all 0.3s;
     }
-
+    .nav-button {
+        text-align: center;
+    }
     a,
     a:focus {
         padding: 10px 20px;
@@ -363,18 +378,15 @@ section {
             visibility: visible;
             background: #ffffff;
             box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-        }
-
-        ul li {
-            min-width: 200px;
-        }
-
-        ul a {
-            padding: 10px 20px;
-        }
-
-        ul a i {
-            font-size: 15px;
+            li {
+                min-width: 200px;
+            }
+            a {
+                padding: 10px 20px;
+                i {
+                    font-size: 15px;
+                }
+            }
         }
 
         ul a:hover,
