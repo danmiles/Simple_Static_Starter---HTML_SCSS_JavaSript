@@ -3,7 +3,115 @@ $text-color: #2f2d2c;
 $link-color: #0baa0b;
 $link-color__hover: #358b03;
 
+// ============= Global setup start =============
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    min-width: 320px;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+    color: $text-color;
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+ul,
+ol {
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+a {
+    transition: all 0.3s ease;
+    color: $link-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $link-color__hover;
+        text-decoration: none;
+    }
+}
+
+button {
+    border: none;
+    padding: 0;
+    margin: 0;    
+    border-radius: 10px;    
+    .button { 
+        display: inline-block;       
+        background-color: $link-color;        
+        border: none; 
+        border-radius: 10px;        
+        color: white !important;
+        padding: 8px 17px ;
+        text-align: center;
+        text-decoration: none;       
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    
+        &:hover, &:focus {
+            background-color: $link-color__hover;
+            color: $accent;
+        }
+    }
+}
+
+.container-xl {
+    max-width: 1600px;
+}
+
 .container {
     max-width: 1440px;
 }
+
+.container-s {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.container-xs {
+    max-width: 1076px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+
+// ============= Global setup end =============
+
+
 
