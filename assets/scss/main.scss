@@ -111,9 +111,14 @@
     a:hover,
     .active,
     .active:focus,
-    li:hover>a {
-        color: #127512;
-    }
+    li:hover> {
+        a {
+            color: $link-color__hover;
+        }
+    } 
+
+
+    
 
     .dropdown:hover>ul {
         opacity: 1;
@@ -149,13 +154,14 @@
             font-size: 15px;
             text-transform: none;
             font-weight: 600;
-
+            
             i {
                 font-size: 20px;
+                transition: all 0.3s ease;
             }
 
             &:hover {
-                color: $link-color__hover;
+                color: $link-color__hover; 
             }
         }
 

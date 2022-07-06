@@ -224,11 +224,11 @@ section {
     line-height: 0;
     margin-left: 2px;
 }
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
+.navbar a:hover a,
+.navbar .active a,
+.navbar .active:focus a,
 .navbar li:hover > a {
-    color: #127512;
+    color: #358b03;
 }
 .navbar .dropdown:hover > ul {
     opacity: 1;
@@ -266,6 +266,8 @@ section {
 }
 .navbar .dropdown ul a i {
     font-size: 20px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .navbar .dropdown ul a:hover {
     color: #358b03;
