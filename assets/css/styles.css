@@ -1,0 +1,105 @@
+/* ============ Global styles start ============ */
+:root {
+  /* Global color and fonts*/
+  --main-font: 'Roboto', sans-serif;
+  --primary: #ffb400;
+  --link: #05a41b;
+  --hover: #ff1b02;
+  --text: #ffffff;
+  --white: #ffffff;
+  --text-font-size: 18px;  
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-size: var(--text-font-size);
+  color: var(--text);
+  font-family: var(--main-font);
+  line-height: 1.4;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul li,
+ol li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove blue color on click (mobile devices) */
+input,
+textarea,
+button,
+select,
+a,
+div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  transition: var(--transition);
+  color: var(--link);
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1;
+}
+a:hover {
+  color: var(--hover);
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: var(--text-font-size);
+}
+
+::selection {
+  color: var(--text);
+  background: var(--primary);
+}
+
+/*  button-main --- start  */
+.button-main {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  outline: none !important;
+  overflow: hidden;
+  z-index: 2;
+  background-color: var(--primary);
+  transition: var(--transition);
+  color: black;
+  padding: 15px 28px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.button-main:hover {
+  color: var(--text);
+  background-color: var(--hover);
+}
+/*  button-main --- end  */
+
+/* ============ Global styles end ============ */
