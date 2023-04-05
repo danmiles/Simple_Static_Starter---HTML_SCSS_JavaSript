@@ -1,16 +1,14 @@
-@import "mixins-media";
-@import "variables";
+@import 'mixins-media';
+@import 'variables';
 // Fonts import local, uncomment if you need.
 // @import "fonts";
-
-
 
 // =============  Disable aos animation delay on mobile devices start =============
 
 @include mw-991 {
-    [data-aos-delay] {
-        transition-delay: 0 !important;
-    }
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
 }
 
 // =============  Disable aos animation delay on mobile devices end =============
@@ -18,42 +16,41 @@
 // ============= Header start =============
 
 .header {
-    transition: all 0.5s;
-    z-index: 997;
-    padding: 8px 0;
-    background-color: #d7d7d7;
-    display: flex;
-    align-items: center;
-    @include mw-991 {
-        min-height: 50px;
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 8px 0;
+  background-color: #d7d7d7;
+  display: flex;
+  align-items: center;
+  @include mw-991 {
+    min-height: 50px;
+  }
+
+  .logo {
+    line-height: 0;
+
+    img {
+      max-height: 40px;
+      margin-right: 6px;
     }
 
-    .logo {
-        line-height: 0;
-
-        img {
-            max-height: 40px;
-            margin-right: 6px;
-        }
-
-        span {
-            font-size: 25px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #098809;            
-            @include mw-400 {
-                display: none;
-            }
-        }
+    span {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #098809;
+      @include mw-400 {
+        display: none;
+      }
     }
+  }
 }
 
 .header-scrolled {
-    background-color: #f3aa22;
-    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-    padding: 5px 0;
-    min-height: 40px;
-  
+  background-color: #f3aa22;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+  padding: 5px 0;
+  min-height: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -63,259 +60,255 @@
 * Desktop Navigation 
 */
 .navbar {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    margin: 0;
     padding: 0;
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    align-items: center;
+    @include mw-1200 {
+      gap: 30px;
+    }
+  }
+
+  li {
+    position: relative;
+  }
+
+  a,
+  a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #012970;
+    white-space: nowrap;
+    transition: 0.3s;
 
-    ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 40px;
-        list-style: none;
-        align-items: center;
-        @include mw-1200 {
-            gap: 30px;
-        }
+    @include mw-991 {
+      justify-content: start;
     }
+  }
+
+  a i,
+  a:focus i {
+    font-size: 15px;
+    line-height: 0;
+    margin-left: 2px;
+  }
+
+  a:hover,
+  .active,
+  .active:focus,
+  li:hover > {
+    a {
+      color: $link-color__hover;
+    }
+  }
+
+  .dropdown:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+    border-radius: 4px;
 
     li {
-        position: relative;
-    } 
+      min-width: 200px;
 
-    a,
-    a:focus {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;        
-        font-family: "Roboto", sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        color: #012970;
-        white-space: nowrap;
-        transition: 0.3s;
-
-        @include mw-991 {
-            justify-content: start;
-        }
+      &:hover {
+        color: $link-color__hover;
+      }
     }
 
-    a i,
-    a:focus i {
-        font-size: 15px;
-        line-height: 0;
-        margin-left: 2px;
+    a {
+      padding: 10px 20px;
+      font-size: 15px;
+      text-transform: none;
+      font-weight: 600;
+
+      i {
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        color: $link-color__hover;
+      }
     }
 
-    a:hover,
-    .active,
-    .active:focus,
-    li:hover> {
-        a {
-            color: $link-color__hover;
-        }
-    } 
-
-
-    
-
-    .dropdown:hover>ul {
-        opacity: 1;
-        top: 100%;
-        visibility: visible;
+    .active:hover {
+      color: $link-color__hover;
     }
+  }
 
+  .dropdown {
     .dropdown ul {
-        display: block;
-        position: absolute;
-        left: 14px;
-        top: calc(100% + 30px);
-        margin: 0;
-        padding: 10px 0;
-        z-index: 99;
-        opacity: 0;
-        visibility: hidden;
-        background: #fff;
-        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-        transition: 0.3s;
-        border-radius: 4px;
-
-        li {
-            min-width: 200px;
-
-            &:hover {
-                color: $link-color__hover;
-            }
-        }
-
-        a {
-            padding: 10px 20px;
-            font-size: 15px;
-            text-transform: none;
-            font-weight: 600;
-            
-            i {
-                font-size: 20px;
-                transition: all 0.3s ease;
-            }
-
-            &:hover {
-                color: $link-color__hover; 
-            }
-        }
-
-        .active:hover {
-            color: $link-color__hover;
-        }
+      top: 0;
+      left: calc(100% - 30px);
+      visibility: hidden;
     }
-
-    .dropdown {
-        .dropdown ul {
-            top: 0;
-            left: calc(100% - 30px);
-            visibility: hidden;
-        }
-    }
+  }
 }
 
-.dropdown .dropdown:hover>ul {
-    opacity: 1;
-    top: 0;
-    left: 100%;
-    visibility: visible;
+.dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
 }
 
 @include mw-1400 {
-    .navbar .dropdown .dropdown ul {
-        left: -90%;
-    }
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
 
-    .navbar .dropdown .dropdown:hover>ul {
-        left: -100%;
-    }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
 }
 
 /**
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-    color: #127512;
-    font-size: 40px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
+  color: #127512;
+  font-size: 40px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
 
-    .bi-x {
-        color: #fff;
-    }
+  .bi-x {
+    color: #fff;
+  }
 }
 
 @include mw-991 {
-    .mobile-nav-toggle {
-        display: block;
-    }
+  .mobile-nav-toggle {
+    display: block;
+  }
 
-    .navbar ul {
-        display: none;
-    }
-
+  .navbar ul {
+    display: none;
+  }
 }
 
 .navbar-mobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #f3aa22;
-    transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #f3aa22;
+  transition: 0.3s;
 
-    .mobile-nav-toggle {
-        font-size: 40px;
-        position: absolute;
-        top: 25px;
-        right: 15px;
+  .mobile-nav-toggle {
+    font-size: 40px;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+  }
+
+  ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: #eedddd;
+    overflow-y: auto;
+    transition: all 0.3s;
+  }
+  .nav-button {
+    text-align: center;
+  }
+  a,
+  a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #012970;
+  }
+
+  a:hover,
+  .active,
+  li:hover > a {
+    color: #358b03;
+  }
+
+  .getstarted,
+  .getstarted:focus {
+    margin: 15px;
+
+    @include mw-991 {
+      display: block;
+      text-align: center;
+      margin: 15px 50px;
     }
+  }
 
+  .dropdown {
     ul {
-        display: block;
-        position: absolute;
-        top: 55px;
-        right: 15px;
-        bottom: 15px;
-        left: 15px;
-        padding: 10px 0;
-        border-radius: 10px;
-        background-color: #eedddd;
-        overflow-y: auto;
-        transition: all 0.3s;
-    }
-    .nav-button {
-        text-align: center;
-    }
-    a,
-    a:focus {
+      position: static;
+      display: none;
+      margin: 10px 20px;
+      padding: 10px 0;
+      z-index: 99;
+      opacity: 1;
+      visibility: visible;
+      background: #ffffff;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+      li {
+        min-width: 200px;
+      }
+      a {
         padding: 10px 20px;
-        font-size: 15px;
-        color: #012970;
+        i {
+          font-size: 15px;
+        }
+      }
     }
 
-    a:hover,
-    .active,
-    li:hover>a {
-        color: #358b03;
+    ul a:hover,
+    ul .active:hover,
+    ul li:hover > a {
+      color: #358b03;
     }
 
-    .getstarted,
-    .getstarted:focus {
-        margin: 15px;
-
-        @include mw-991 {
-            display: block;
-            text-align: center;
-            margin: 15px 50px;
-        }
+    > .dropdown-active {
+      display: block;
     }
-
-    .dropdown {
-        ul {
-            position: static;
-            display: none;
-            margin: 10px 20px;
-            padding: 10px 0;
-            z-index: 99;
-            opacity: 1;
-            visibility: visible;
-            background: #ffffff;
-            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-            li {
-                min-width: 200px;
-            }
-            a {
-                padding: 10px 20px;
-                i {
-                    font-size: 15px;
-                }
-            }
-        }
-
-        ul a:hover,
-        ul .active:hover,
-        ul li:hover>a {
-            color: #358b03;
-        }
-
-        >.dropdown-active {
-            display: block;
-        }
-    }
+  }
 }
 
 // ============= Header end =============
